@@ -7,11 +7,6 @@
 import Foundation
 import SwiftUI
 
-//
-// https://www.vadimbulavin.com/swiftui-popup-sheet-popover/
-//
-// better snackbar https://github.com/zaniluca/SwiftUISnackbar/blob/main/Sources/SwiftUISnackbar/Snackbar.swift
-
 struct Popup<T: View>: ViewModifier {
     let popup: T
     let isPresented: Bool

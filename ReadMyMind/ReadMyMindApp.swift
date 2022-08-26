@@ -11,7 +11,7 @@ import SwiftUI
 struct ReadMyMindApp: App {
     var body: some Scene {
         WindowGroup {
-           FirstScreen(isFaceUp: true)
+           FirstScreen()
 //        SecondScreen()
         }
     }

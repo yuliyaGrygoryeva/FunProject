@@ -18,11 +18,6 @@ let imagesNames = ["moon", "tropicalstorm", "graduationcap", "umbrella", "scisso
 //    return array
 //}
 
-struct Card: Hashable {
-    var index: Int
-    var image: String
-}
-
 //static let goalImage: String  = ""
 
 func createTable() -> [[Card]] {
@@ -108,7 +103,7 @@ struct SecondScreen: View {
                             RoundedRectangle(cornerRadius: 8).fill(Color.white)
                             RoundedRectangle(cornerRadius: 8).stroke(lineWidth: 3)
                         
-                            Text("\(item.index)\(Image(systemName: $image)) ")
+             //               Text("\(item.index)\(Image(systemName: $image)) ")
                           //  .cornerRadius(8)
                             
                         }
@@ -118,7 +113,7 @@ struct SecondScreen: View {
         }
             .padding(.bottom, 3)
         }
-            NavigationLink (isActive: $isDisplayResult, destination: ThirdScreen(result: image))
+  //          NavigationLink (isActive: $isDisplayResult, destination: ThirdScreen(result: image))
         Button {
             isDisplayResult.toggle()
 //
