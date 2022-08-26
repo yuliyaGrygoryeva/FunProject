@@ -41,7 +41,7 @@ struct FirstScreen: View {
                             
                             Text("Next")
                         }.shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
-                  //  }.frame(width: UIScreen.main.bounds.width - 40, height: 55)
+                    .frame(width: UIScreen.main.bounds.width - 140, height: 55)
                     })
                         
                 }
