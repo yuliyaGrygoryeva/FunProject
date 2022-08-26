@@ -23,7 +23,7 @@ class ReadMyMindViewModel: ObservableObject {
     
 //    var numbers = [["10", "11", "12"],[],[],[],[],[],[],[],[]]
 
-    let imagesNames = ["moon", "tropicalstorm", "graduationcap", "umbrella", "scissors", "paintbrush.pointed", "briefcase", "key", "crown", "leaf"]
+    static let imagesNames = ["moon", "tropicalstorm", "graduationcap", "umbrella", "scissors", "paintbrush.pointed", "briefcase", "key", "crown", "leaf"]
     //
     //func generateImages() -> [String] {
     //
@@ -33,7 +33,7 @@ class ReadMyMindViewModel: ObservableObject {
     //}
 
     //static let goalImage: String  = ""
-  
+    static var goal: Int  = Int.random(in: 0..<10)
     var number = 0
     func increaseNumber() {
         number += 1
@@ -42,22 +42,29 @@ class ReadMyMindViewModel: ObservableObject {
 //        self.createTable()
 //    }
    // var myList = createTable()
+//    init(goal: Int) {
+//        self.goal = Int.random(in: 0..<10)
+//    }
+//
+    func getGoalImage() -> String {
+    //    let goal = Int.random(in: 0..<10)
+        let goalImage = ReadMyMindViewModel.imagesNames[ReadMyMindViewModel.goal]
+        return goalImage
+    }
     
     
     func createTable() -> [[Card]] {
         var table: [[Card]] = []
-        let goal = Int.random(in: 0..<10)
-        let goalImage = imagesNames[goal]
         
         var number = 1
         var position: Int
         
         
         for line in 1...10 {
-            var array = imagesNames
+            var array = ReadMyMindViewModel.imagesNames
             var cardArray: [Card] = []
-            
-            array.remove(at: goal)
+            let goalImage = getGoalImage()
+            array.remove(at: ReadMyMindViewModel.goal)
             array.shuffle()
             if line == 1 {
                 position = 8
@@ -104,16 +111,8 @@ class ReadMyMindViewModel: ObservableObject {
         }
         return table
     }
-    
 
-    
-    
-//
-//    func generateImagesOrder() {
-//        var goal =
-//    }
-//
 }
-class CardImage: ObservableObject {
-    @Published var image = ""
-}
+//class CardImage: ObservableObject {
+//    @Published var image = ""
+//}
