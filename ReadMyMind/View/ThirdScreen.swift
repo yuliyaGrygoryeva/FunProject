@@ -9,22 +9,19 @@ import SwiftUI
 
 struct ThirdScreen: View {
     var result: String
-  //  @ObservedObject var readMyMindViewModel: ReadMyMindViewModel
     
     var body: some View {
         ZStack {
-            LinearGradient(colors: [.yellow, .mint, .orange], startPoint: .top, endPoint: .bottom).opacity(0.2).edgesIgnoringSafeArea(.all)
+            LinearGradient(colors: [.yellow, .mint, .white], startPoint: .top, endPoint: .bottom).opacity(0.2).edgesIgnoringSafeArea(.all)
             VStack{
-                Text(Image(systemName: result))
+                Image(systemName: result)
+                    .resizable()
+                    .scaledToFit()
                 Image("guessCorrect")
+                    .resizable()
+                    .scaledToFit()
                 
-            }
+            }.padding()
         }
     }
 }
-//
-//struct ThirdScreen_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ThirdScreen(result: <#String#>, readMyMindViewModel: <#ReadMyMindViewModel#>)
-//    }
-//}

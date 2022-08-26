@@ -16,7 +16,6 @@
 		33E0E41128B188B600AF8AE1 /* ThirdScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E0E41028B188B600AF8AE1 /* ThirdScreen.swift */; };
 		33E0E41328B18D5200AF8AE1 /* ReadMyMindViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E0E41228B18D5200AF8AE1 /* ReadMyMindViewModel.swift */; };
 		33E0E41528B18D7500AF8AE1 /* NumberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E0E41428B18D7500AF8AE1 /* NumberModel.swift */; };
-		33E0E44028B2185700AF8AE1 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E0E43F28B2185600AF8AE1 /* Popup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +29,6 @@
 		33E0E41028B188B600AF8AE1 /* ThirdScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdScreen.swift; sourceTree = "<group>"; };
 		33E0E41228B18D5200AF8AE1 /* ReadMyMindViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMyMindViewModel.swift; sourceTree = "<group>"; };
 		33E0E41428B18D7500AF8AE1 /* NumberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberModel.swift; sourceTree = "<group>"; };
-		33E0E43F28B2185600AF8AE1 /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +101,6 @@
 			children = (
 				33E0E40C28B1888A00AF8AE1 /* FirstScreen.swift */,
 				33E0E40E28B188A200AF8AE1 /* SecondScreen.swift */,
-				33E0E43F28B2185600AF8AE1 /* Popup.swift */,
 				33E0E41028B188B600AF8AE1 /* ThirdScreen.swift */,
 			);
 			path = View;
@@ -187,7 +184,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33E0E44028B2185700AF8AE1 /* Popup.swift in Sources */,
 				33E0E40F28B188A200AF8AE1 /* SecondScreen.swift in Sources */,
 				33E0E41128B188B600AF8AE1 /* ThirdScreen.swift in Sources */,
 				33E0E41528B18D7500AF8AE1 /* NumberModel.swift in Sources */,

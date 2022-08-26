@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct SecondScreen: View {
-    @EnvironmentObject var image: CardImage
     @ObservedObject var viewModel = ReadMyMindViewModel()
     
     @State var isDisplayResult = false
+   // @State var table = viewModel.createTable()
     
     var body: some View {
         VStack{
@@ -45,8 +45,10 @@ struct SecondScreen: View {
             }.frame(width: UIScreen.main.bounds.width - 100, height: 55)
             
                 .sheet(isPresented: $isDisplayResult) {
-                    ThirdScreen(result: "moon")
+                    ThirdScreen(result: viewModel.getGoalImage())
                 }
+        }.onAppear{
+            viewModel.createTable()
         }
     }
 }
