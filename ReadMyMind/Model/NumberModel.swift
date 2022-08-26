@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Card: Hashable {
+    var index: Int
+    var image: String
+}
