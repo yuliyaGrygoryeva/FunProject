@@ -7,95 +7,18 @@
 
 import SwiftUI
 
-var numbers = [["10", "11", "12"],[],[],[],[],[],[],[],[]]
-
-let imagesNames = ["moon", "tropicalstorm", "graduationcap", "umbrella", "scissors", "paintbrush.pointed", "briefcase", "key", "crown", "leaf"]
-//
-//func generateImages() -> [String] {
-//
-//    array.shuffle()
-//    array.insert(goalImage, at: 8)
-//    return array
-//}
-
-//static let goalImage: String  = ""
-
-func createTable() -> [[Card]] {
-    var table: [[Card]] = []
-    let goal = Int.random(in: 0..<10)
-    let goalImage = imagesNames[goal]
-    
-    var number = 1
-    var position: Int
-    
-    
-    for line in 1...10 {
-        var array = imagesNames
-        var cardArray: [Card] = []
-        
-        array.remove(at: goal)
-        array.shuffle()
-        if line == 1 {
-            position = 8
-            array.insert(goalImage, at: position)
-        } else if line == 2 {
-            position = 7
-            array.insert(goalImage, at: position)
-        } else if line == 3 {
-            position = 6
-            array.insert(goalImage, at: position)
-        } else if line == 4 {
-            position = 5
-            array.insert(goalImage, at: position)
-        } else if line == 5 {
-            position = 4
-            array.insert(goalImage, at: position)
-        } else if line == 6 {
-            position = 3
-            array.insert(goalImage, at: position)
-        } else if line == 7 {
-            position = 2
-            array.insert(goalImage, at: position)
-        } else if line == 8 {
-            position = 1
-            array.insert(goalImage, at: position)
-        } else if line == 9 {
-            position = 0
-            array.insert(goalImage, at: position)
-            position = 8
-            array.remove(at: position)
-            array.insert(goalImage, at: position)
-        } else if line == 10 {
-            position = 8
-            array.insert(goalImage, at: position)
-        }
-        
-        for index in 0...9 {
-            let card = Card(index: number, image: array[index])
-            number += 1
-            cardArray.append(card)
-        }
-        
-        table.append(cardArray)
-    }
-    return table
-}
-class CardImage: ObservableObject {
-    @Published var image = ""
-}
-
 struct SecondScreen: View {
     @EnvironmentObject var image: CardImage
-    var myList = createTable()
-    var number = 0
-    mutating func increaseNumber() {
-        number += 1
-    }
+    @ObservedObject var viewModel = ReadMyMindViewModel()
+    
+    //var myList = viewModel.createTable()
+    
     @State var isPopupPresented = false
     @State var isDisplayResult = false
+    
     var body: some View {
         VStack{
-        List(myList, id: \.self) {row in
+            List(viewModel.createTable(), id: \.self) {row in
             HStack {
                 ForEach(row, id: \.self) { item in
                     HStack {
@@ -132,18 +55,22 @@ struct SecondScreen: View {
             
             Text("Read my mind")
             }.shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
+               
         }.frame(width: UIScreen.main.bounds.width - 40, height: 55)
-              
+                .sheet(isPresented: $isDisplayResult) {
+                    ThirdScreen(result: "moon")
+                }
         }
-        .popup(isPresented: isPopupPresented) {
-            VStack{
-                Image(systemName: "moon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 40.0, height: 40.0)
-                    .imageScale(.large)
-            }
-        }
+      
+//        .popup(isPresented: isPopupPresented) {
+//            VStack{
+//                Image(systemName: "moon")
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .frame(width: 40.0, height: 40.0)
+//                    .imageScale(.large)
+//            }
+//        }
     }
 }
 
