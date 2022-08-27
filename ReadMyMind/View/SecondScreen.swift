@@ -11,7 +11,7 @@ struct SecondScreen: View {
     @ObservedObject var viewModel = ReadMyMindViewModel()
     
     @State var isDisplayResult = false
-   // @State var table = viewModel.createTable()
+//    @State var table = viewModel.createTable()
     
     var body: some View {
         VStack{
